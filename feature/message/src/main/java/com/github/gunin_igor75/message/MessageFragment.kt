@@ -1,7 +1,7 @@
 package com.github.gunin_igor75.message
 
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.github.gunin_igor75.common.base.BaseFragment
+import com.github.gunin_igor75.common.base.base.BaseFragment
 import com.github.gunin_igor75.message.databinding.FragmentMessageBinding
 
 class MessageFragment : BaseFragment(R.layout.fragment_message) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">JobSearchApp</string>
     <string name="find">Поиск</string>
     <string name="favorites">Избранное</string>
     <string name="response">Отклики</string>

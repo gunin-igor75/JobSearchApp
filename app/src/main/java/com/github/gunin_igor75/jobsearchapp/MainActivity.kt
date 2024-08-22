@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.github.gunin_igor75.common.base.BaseActivity
+import com.github.gunin_igor75.common.base.base.BaseActivity
 import com.github.gunin_igor75.jobsearchapp.databinding.ActivityMainBinding
 
 class MainActivity : BaseActivity(R.layout.activity_main) {

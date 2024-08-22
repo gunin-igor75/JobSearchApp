@@ -1,4 +1,4 @@
-package com.github.gunin_igor75.common.base
+package com.github.gunin_igor75.common.base.base
 
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
