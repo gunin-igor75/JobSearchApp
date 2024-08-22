@@ -52,6 +52,9 @@ dependencies {
     //viewbinding-delegate
     implementation(libs.viewbinding.delegate.kirich)
 
+    //koin
+    implementation(libs.koin.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

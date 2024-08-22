@@ -43,6 +43,9 @@ dependencies {
     implementation(project(":feature:home:di"))
     implementation(project(":feature:favorites:di"))
 
+    //koin
+    implementation(libs.koin.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

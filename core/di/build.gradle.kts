@@ -43,6 +43,9 @@ dependencies {
     implementation(project(":core:common"))
     implementation(project(":core:network"))
 
+    //koin
+    implementation(libs.koin.android)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
