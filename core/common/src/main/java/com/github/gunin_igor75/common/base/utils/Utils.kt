@@ -68,8 +68,7 @@ object Utils {
             stringBuilder.toString()
         } catch (e: Exception) {
             Log.e(TAG, "Error reading JSON: $e.")
-            e.printStackTrace()
-            ""
+            throw e
         }
     }
 
