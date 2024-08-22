@@ -33,6 +33,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -42,6 +46,9 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    //viewbinding-delegate
+    implementation(libs.viewbinding.delegate.kirich)
 
     //module
     implementation(project(":bridge_di_module"))
@@ -54,8 +61,13 @@ dependencies {
     implementation(project(":feature:favorites:data"))
     implementation(project(":feature:favorites:domain"))
     implementation(project(":feature:favorites:presentation"))
+    implementation(project(":feature:response"))
+    implementation(project(":feature:message"))
+    implementation(project(":feature:profile"))
 
-
+    //navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
