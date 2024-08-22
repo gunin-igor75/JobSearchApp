@@ -6,6 +6,9 @@ import android.net.NetworkCapabilities
 import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.github.gunin_igor75.common.R
+import com.google.gson.Gson
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 object Utils {
 
@@ -44,6 +47,29 @@ object Utils {
         } catch (e: Exception) {
             Log.e(TAG, "Error ${e.message}")
             e.stackTrace
+        }
+    }
+
+    fun <T> getData(context: Context, path: String, clazz: Class<T>): T {
+        val json = readJsonFromAssets(context, path)
+        return Gson().fromJson(json, clazz)
+    }
+
+    private fun readJsonFromAssets(context: Context, path: String): String {
+        return try {
+            val file = context.assets.open(path)
+            val bufferedReader = BufferedReader(InputStreamReader(file))
+            val stringBuilder = StringBuilder()
+            bufferedReader.useLines { lines ->
+                lines.forEach {
+                    stringBuilder.append(it)
+                }
+            }
+            stringBuilder.toString()
+        } catch (e: Exception) {
+            Log.e(TAG, "Error reading JSON: $e.")
+            e.printStackTrace()
+            ""
         }
     }
 
