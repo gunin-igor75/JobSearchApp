@@ -1,18 +1,22 @@
 package com.github.gunin_igor75.jobsearchapp
 
 import android.os.Bundle
-import android.util.Log
+import androidx.lifecycle.flowWithLifecycle
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseActivity
-import com.github.gunin_igor75.common.base.utils.Utils
+import com.github.gunin_igor75.common.base.utils.Constants.Companion.FAVORITE_ITEM_ID
 import com.github.gunin_igor75.jobsearchapp.databinding.ActivityMainBinding
-import com.github.gunin_igor75.network.dto.DataContainer
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity(R.layout.activity_main) {
 
     private val binding: ActivityMainBinding by viewBinding(R.id.main)
+
+    private val vm: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,16 +24,25 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
             .findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNav.setupWithNavController(navController)
-
-        val result = Utils.getData(
-            context = applicationContext,
-            path = "offers.json",
-            clazz = DataContainer::class.java
-        )
-        Log.d(TAG, "!!!!!!!!$result")
+        vm.getCountFavoritesVacancies()
+        observeViewModel()
     }
 
-    private companion object{
-        const val TAG = "MainActivity"
+    private fun observeViewModel() {
+        lifecycleScope.launch {
+            vm.countFavoriteVacancies.flowWithLifecycle(lifecycle).collect {
+                if (it > 0) {
+                    updateBadge(it)
+                }
+            }
+        }
+    }
+
+    private fun updateBadge(count: Int) {
+        if (count <= 0) return
+        val menu = binding.bottomNav.menu
+        val child = menu.getItem(FAVORITE_ITEM_ID)
+        val badge = binding.bottomNav.getOrCreateBadge(child.itemId)
+        badge.number = count
     }
 }

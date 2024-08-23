@@ -5,6 +5,6 @@ import com.github.gunin_igor75.di.homeModule
 import org.koin.dsl.module
 
 
-val mainModule = module {
+val bridgeModule = module {
     includes(coreModule, homeModule)
 }
