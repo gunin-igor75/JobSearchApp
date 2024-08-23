@@ -19,4 +19,8 @@
     <dimen name="_2dp">2dp</dimen>
     <dimen name="_1dp">1dp</dimen>
     <dimen name="_8sp">8</dimen>
+
+
+    <dimen name="code_width">48dp</dimen>
+    <dimen name="code_height">48dp</dimen>
 </resources>

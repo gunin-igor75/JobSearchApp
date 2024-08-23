@@ -88,4 +88,11 @@
 
     </style>
 
+    <style name="TextEditStyleCode">
+        <item name="android:background">@drawable/rounded_hint</item>
+        <item name="android:inputType">number</item>
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="android:paddingLeft">@dimen/dp_2x</item>
+    </style>
+
 </resources>

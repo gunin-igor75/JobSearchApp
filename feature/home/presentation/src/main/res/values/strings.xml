@@ -9,4 +9,8 @@
     <string name="find_worker">Поиск сотрудников</string>
     <string name="posting_vacancies">Размещение вакансий и доступ к базе резюме</string>
     <string name="i_find_worker">Я ищу сотрудников</string>
+    <string name="send_email">Отправили код на %s</string>
+    <string name="information_for_send_email">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет</string>
+    <string name="star">❆</string>
+    <string name="confirm">Подтвердить</string>
 </resources>
