@@ -13,7 +13,7 @@ class FakeNetworkSource(
 
     ) : NetworkSource<DataContainer> {
 
-    override fun fetchData(): Response<DataContainer> {
+    override suspend fun fetchData(): Response<DataContainer> {
         return try {
             val data = Utils.getData(
                 context = context,

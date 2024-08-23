@@ -4,6 +4,6 @@ import retrofit2.Response
 
 interface NetworkSource<T> {
 
-    fun fetchData(): Response<T>
+    suspend fun fetchData(): Response<T>
 
 }

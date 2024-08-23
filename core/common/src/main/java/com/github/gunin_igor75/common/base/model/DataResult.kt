@@ -1,4 +1,4 @@
-package com.github.gunin_igor75.data.model
+package com.github.gunin_igor75.common.base.model
 
 sealed class DataResult<T>(
     val data: T? = null,

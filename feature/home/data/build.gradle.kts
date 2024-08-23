@@ -44,6 +44,17 @@ dependencies {
     implementation(project(":core:network"))
     implementation(project(":core:common"))
 
+    //gson
+    implementation(libs.gson.core)
+
+    //okhttp
+    implementation(libs.okhttp.core)
+    implementation(libs.okhttp.logging)
+
+    //retrofit
+    implementation(libs.retrofit.core)
+    implementation(libs.retrofit.gsonConverter)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
