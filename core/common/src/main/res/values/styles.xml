@@ -92,8 +92,11 @@
     <style name="TextEditStyleCode">
         <item name="android:background">@drawable/rounded_hint</item>
         <item name="android:inputType">number</item>
+        <item name="android:paddingLeft">@dimen/_20dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/gray3</item>
-        <item name="android:paddingLeft">@dimen/dp_2x</item>
     </style>
 
 </resources>

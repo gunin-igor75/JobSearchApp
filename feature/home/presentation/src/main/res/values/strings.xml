@@ -11,7 +11,8 @@
     <string name="i_find_worker">Я ищу сотрудников</string>
     <string name="send_email">Отправили код на %s</string>
     <string name="information_for_send_email">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет</string>
-    <string name="star">❆</string>
+    <string name="star">*</string>
+<!--    <string name="star">❆</string>-->
     <string name="confirm">Подтвердить</string>
     <string name="error_email">Вы ввели неверный e-mail</string>
     <string name="empty"></string>

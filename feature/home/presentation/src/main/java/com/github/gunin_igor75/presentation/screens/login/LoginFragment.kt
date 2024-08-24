@@ -10,7 +10,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.databinding.FragmentLoginBinding
-import com.github.gunin_igor75.presentation.utils.watchers.TextWatcherSimple
+import com.github.gunin_igor75.presentation.utils.watchers.TextWatcherInputEmail
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -61,7 +61,7 @@ class LoginFragment : BaseFragment(R.layout.fragment_login) {
     private fun setupEditTextEmail() {
         val borderStrokeColor =
             ContextCompat.getColor(requireContext(), com.github.gunin_igor75.common.R.color.gray2)
-        val textWatcher = TextWatcherSimple(
+        val textWatcher = TextWatcherInputEmail(
             textInputLayout = binding.includeWorker.textInputLayoutEmail,
             color = borderStrokeColor
         ) { text ->
