@@ -15,5 +15,6 @@
     <color name="dark_green">#015905</color>
     <color name="red">#FF0000</color>
     <color name="shadows">#0C0C0C</color>
+    <color name="end_icon_color">#DBDBDB</color>
 
 </resources>

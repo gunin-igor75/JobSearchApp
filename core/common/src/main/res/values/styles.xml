@@ -77,6 +77,7 @@
         <item name="hintTextColor">@color/gray3</item>
         <item name="startIconTint">@color/gray3</item>
         <item name="endIconTint">@color/gray3</item>
+        <item name="errorIconTint">@color/gray3</item>
         <item name="boxStrokeColor">@color/transparent</item>
         <item name="boxBackgroundColor">@color/gray2</item>
         <item name="cursorColor">@color/white</item>

@@ -20,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_2x"
+        app:errorIconDrawable="@drawable/ic_close"
         app:endIconDrawable="@drawable/ic_close"
         app:endIconMode="clear_text"
         app:startIconDrawable="@drawable/ic_response">

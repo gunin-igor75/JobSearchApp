@@ -9,5 +9,18 @@
         android:id="@+id/loginFragment2"
         android:name="com.github.gunin_igor75.presentation.screens.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment2_to_verificationFragment2"
+            app:destination="@id/verificationFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/verificationFragment2"
+        android:name="com.github.gunin_igor75.presentation.screens.verification.VerificationFragment"
+        android:label="fragment_verification"
+        tools:layout="@layout/fragment_verification" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+    </fragment>
 </navigation>

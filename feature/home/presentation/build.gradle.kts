@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.safeags)
+    alias(libs.plugins.parcelize)
 }
 
 android {
@@ -46,11 +48,19 @@ dependencies {
     implementation(project(":feature:home:domain"))
     implementation(project(":core:common"))
 
+    //lifecycle
+    implementation(libs.androidx.lifecycle.core)
+    implementation(libs.androidx.lifecycle.viewmodel)
+
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
 
     //viewbinding-delegate
     implementation(libs.viewbinding.delegate.kirich)
+
+    //adapterDelegates
+    implementation(libs.adapter.delegates.core)
+    implementation(libs.adapter.delegates.viewbinding)
 
     //koin
     implementation(libs.koin.android)
