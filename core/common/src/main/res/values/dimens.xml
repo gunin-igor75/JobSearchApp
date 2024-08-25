@@ -23,4 +23,7 @@
 
     <dimen name="code_width">48dp</dimen>
     <dimen name="code_height">48dp</dimen>
+    <dimen name="card_offer_width">132dp</dimen>
+    <dimen name="card_offer_height">120dp</dimen>
+
 </resources>

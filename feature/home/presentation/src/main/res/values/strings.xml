@@ -20,4 +20,13 @@
     <string name="icon_filter">icon filter</string>
     <string name="vacancies_for_you">Вакансии для вас</string>
     <string name="button_count_vacancies">Еще %d вакансии</string>
+    <string name="icon_offer">icon offer</string>
+    <string name="card_offer_title">Вакансии рядом с вами</string>
+    <string name="raise">Поднять</string>
+    <string name="card_vacancies_viewing_vacancies">Сейчас просматривает 1 человек</string>
+    <string name="icon_favorite_selected">icon favorite selected</string>
+    <string name="icon_experiences">icon experiences</string>
+    <string name="icon_confirm">icon confirm</string>
+    <string name="experiences">Опыт от 1 года до 3 лет</string>
+    <string name="publication_date">Опубликовано %s</string>
 </resources>
