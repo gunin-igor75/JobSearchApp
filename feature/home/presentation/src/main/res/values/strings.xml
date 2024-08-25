@@ -5,11 +5,13 @@
     <string name="find_job">Поиск работы</string>
     <string name="hint_email">Электронная почта или телефон</string>
     <string name="hint_find_job">Должность, ключевые слова</string>
+    <string name="hint_find_job_vacancies">Должность по подходящим вакан...</string>
     <string name="button_continue">Продолжить</string>
     <string name="login_password">Войти с паролем</string>
     <string name="find_worker">Поиск сотрудников</string>
     <string name="posting_vacancies">Размещение вакансий и доступ к базе резюме</string>
     <string name="i_find_worker">Я ищу сотрудников</string>
+    <string name="response">Откликнуться</string>
     <string name="send_email">Отправили код на %s</string>
     <string name="information_for_send_email">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет</string>
     <string name="star">*</string>
@@ -29,4 +31,7 @@
     <string name="icon_confirm">icon confirm</string>
     <string name="experiences">Опыт от 1 года до 3 лет</string>
     <string name="publication_date">Опубликовано %s</string>
+    <string name="count_vacancies">%d вакансий</string>
+    <string name="compliance">По соответствию</string>
+    <string name="icon_sort">icon sort</string>
 </resources>
