@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_2x"
+    tools:context=".screens.home.HomeFragment">
+
+    <include
+        android:id="@+id/includeFindJob"
+        layout="@layout/block_find_job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewOffers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/sfProDisplayBold.20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4x"
+        android:text="@string/vacancies_for_you" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewVacancies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonCountVacancies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_3x"
+        android:backgroundTint="@color/blue"
+        android:text="@string/button_count_vacancies"
+        android:textAppearance="@style/sfProDisplayBold.16sp"
+        app:cornerRadius="@dimen/dp_1x" />
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_bg"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        style="@style/TextInputLayoutCustom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/rounded_hint"
+        app:startIconDrawable="@drawable/ic_find">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInputEditTextEmail"
+            style="@style/TextEditStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_find_job" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_1x"
+        android:background="@drawable/rounded_hint"
+        android:padding="@dimen/dp_1x">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/icon_filter"
+            android:src="@drawable/ic_filter" />
+
+    </FrameLayout>
+
+</LinearLayout>

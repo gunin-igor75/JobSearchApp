@@ -4,6 +4,7 @@
     <string name="login">Вход в личный кабинет</string>
     <string name="find_job">Поиск работы</string>
     <string name="hint_email">Электронная почта или телефон</string>
+    <string name="hint_find_job">Должность, ключевые слова</string>
     <string name="button_continue">Продолжить</string>
     <string name="login_password">Войти с паролем</string>
     <string name="find_worker">Поиск сотрудников</string>
@@ -12,8 +13,11 @@
     <string name="send_email">Отправили код на %s</string>
     <string name="information_for_send_email">Напишите его, чтобы подтвердить, что это вы, а не кто-то другой входит в личный кабинет</string>
     <string name="star">*</string>
-<!--    <string name="star">❆</string>-->
+    <!--    <string name="star">❆</string>-->
     <string name="confirm">Подтвердить</string>
     <string name="error_email">Вы ввели неверный e-mail</string>
     <string name="empty"></string>
+    <string name="icon_filter">icon filter</string>
+    <string name="vacancies_for_you">Вакансии для вас</string>
+    <string name="button_count_vacancies">Еще %d вакансии</string>
 </resources>
