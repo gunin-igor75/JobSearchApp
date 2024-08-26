@@ -23,4 +23,8 @@ class FavoriteVacanciesLocalDataSource(
     override suspend fun removeFromFavorites(vacanciesId: String) {
         apiDao.removeFromFavorites(vacanciesId)
     }
+
+    override fun getCountFavorites(): Flow<Int> {
+        return apiDao.getCountFavorites()
+    }
 }

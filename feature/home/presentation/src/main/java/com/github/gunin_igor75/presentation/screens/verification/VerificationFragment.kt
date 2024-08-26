@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
@@ -31,6 +32,7 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
         setupColorHintEditText()
         settingActionUponChangeEditText()
         setupModeActiveButtonConfirm()
+        launchHomeFragment()
     }
 
     private fun setupEmailTitle() {
@@ -75,7 +77,6 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
         }
     }
 
-
     private fun setupColorHintEditText() {
         with(binding) {
             changeColorHintEditText(editTextCode1)
@@ -84,6 +85,7 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
             changeColorHintEditText(editTextCode4)
         }
     }
+
 
     private fun changeColorHintEditText(editText: EditText) {
         editText.setOnFocusChangeListener { v, hasFocus ->
@@ -103,6 +105,12 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
                     editText.setHintTextColor(colorNotHasFocus)
                 }
             }
+        }
+    }
+
+    private fun launchHomeFragment() {
+        binding.buttonConfirm.setOnClickListener {
+            findNavController().navigate(R.id.action_verificationFragment2_to_homeFragment2)
         }
     }
 }

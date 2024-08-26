@@ -19,6 +19,10 @@ class FavoriteRepositoryImpl(
         return localDataSource.observeIsFavorites(vacanciesId)
     }
 
+    override fun getCountFavorites(): Flow<Int> {
+        return localDataSource.getCountFavorites()
+    }
+
     override suspend fun addFavorite(favoriteVacancyModel: FavoriteVacancyModel) {
         localDataSource.addFavorite(favoriteVacancyModel.toVacancyDb())
     }

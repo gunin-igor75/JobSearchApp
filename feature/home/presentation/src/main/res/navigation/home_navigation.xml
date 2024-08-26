@@ -22,5 +22,28 @@
         <argument
             android:name="email"
             app:argType="string" />
+        <action
+            android:id="@+id/action_verificationFragment2_to_homeFragment2"
+            app:destination="@id/homeFragment2"
+            app:popUpTo="@id/homeFragment2"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment2"
+        android:name="com.github.gunin_igor75.presentation.screens.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_vacanciesDetailsFragment2"
+            app:destination="@id/vacanciesDetailsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacanciesDetailsFragment2"
+        android:name="com.github.gunin_igor75.presentation.screens.vacanciesdetails.VacanciesDetailsFragment"
+        android:label="fragment_vacancies_details"
+        tools:layout="@layout/fragment_vacancies_details" >
+        <argument
+            android:name="vacancy"
+            app:argType="com.github.gunin_igor75.presentation.model.UiVacancy" />
     </fragment>
 </navigation>

@@ -1,8 +1,10 @@
 package com.github.gunin_igor75.di
 
 import com.github.gunin_igor75.domain.usecase.AddFavoriteUseCase
+import com.github.gunin_igor75.domain.usecase.GetCountFavoritesUseCase
 import com.github.gunin_igor75.domain.usecase.GetFavoritesVacanciesUseCase
 import com.github.gunin_igor75.domain.usecase.GetOffersUseCase
+import com.github.gunin_igor75.domain.usecase.GetVacanciesStateUseCase
 import com.github.gunin_igor75.domain.usecase.IsFavoritesVacancyUseCase
 import com.github.gunin_igor75.domain.usecase.RemoveFromFavoritesUseCase
 import org.koin.dsl.module
@@ -23,7 +25,11 @@ internal val domainModule = module {
     factory<GetOffersUseCase> {
         GetOffersUseCase(repository = get())
     }
-    factory<GetFavoritesVacanciesUseCase> {
-        GetFavoritesVacanciesUseCase(repository = get())
+    factory<GetVacanciesStateUseCase> {
+        GetVacanciesStateUseCase(repository = get())
+    }
+
+    factory<GetCountFavoritesUseCase> {
+        GetCountFavoritesUseCase(repository = get())
     }
 }

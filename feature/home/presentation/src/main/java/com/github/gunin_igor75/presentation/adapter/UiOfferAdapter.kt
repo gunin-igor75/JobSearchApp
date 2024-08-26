@@ -39,16 +39,12 @@ class UiOfferAdapter(
             bind {
                 with(binding) {
                     item.icon?.let { imageViewIcon.setImageResource(it) }
-                    if (item.icon == null) imageViewIcon.isVisible = false
-                    if (item.buttonText == null) {
-                        textViewButton.isVisible = false
-                        textViewTitle.maxLines = MAX_LINE
-                    } else {
-                        textViewTitle.maxLines = MIN_LINE
-                        textViewButton.text = item.buttonText
-                        textViewButton.setOnClickListener {
-                            raiseResume()
-                        }
+                    imageViewIcon.isVisible = item.icon != null
+                    textViewButton.isVisible = item.buttonText != null
+                    textViewTitle.maxLines = if (item.buttonText == null) MAX_LINE else MIN_LINE
+                    textViewButton.text = item.buttonText
+                    textViewButton.setOnClickListener {
+                        raiseResume()
                     }
                     textViewTitle.text = item.title
                     root.setOnClickListener {

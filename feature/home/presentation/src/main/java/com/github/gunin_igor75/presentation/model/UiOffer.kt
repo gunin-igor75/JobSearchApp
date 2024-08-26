@@ -4,8 +4,8 @@ import androidx.annotation.DrawableRes
 import com.github.gunin_igor75.common.base.model.ListItem
 
 data class UiOffer(
-    override val lisItemId: String,
-    val id: String,
+    override val listItemId: String,
+    val id: String?,
     val title: String,
     val link: String,
     val buttonText: String?,

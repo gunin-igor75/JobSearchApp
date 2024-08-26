@@ -17,40 +17,55 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_2x" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewOffers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_2x"
-        android:orientation="horizontal"
-        tools:listitem="@layout/card_item_offer"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        style="@style/sfProDisplayBold.20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_4x"
-        android:text="@string/vacancies_for_you" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewVacancies"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_2x"
-        android:orientation="vertical"
-        tools:itemCount="1"
-        tools:listitem="@layout/card_item_vacancies"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        android:layout_height="wrap_content">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonCountVacancies"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dp_3x"
-        android:backgroundTint="@color/blue"
-        android:text="@string/button_count_vacancies"
-        android:textAppearance="@style/sfProDisplayBold.16sp"
-        app:cornerRadius="@dimen/dp_1x" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewOffers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/card_item_offer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/sfProDisplayBold.20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4x"
+                android:text="@string/vacancies_for_you" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewVacancies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="1"
+                tools:listitem="@layout/card_item_vacancies" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonCountVacancies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3x"
+                android:backgroundTint="@color/blue"
+                android:text="@string/button_count_vacancies"
+                android:textAppearance="@style/sfProDisplayBold.16sp"
+                app:cornerRadius="@dimen/dp_1x" />
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
 
 </LinearLayout>

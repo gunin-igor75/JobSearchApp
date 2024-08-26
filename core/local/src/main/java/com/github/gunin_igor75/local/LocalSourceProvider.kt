@@ -9,6 +9,8 @@ interface LocalSourceProvider {
 
     fun observeIsFavorites(vacanciesId: String): Flow<Boolean>
 
+    fun getCountFavorites(): Flow<Int>
+
     suspend fun addFavorite(vacanciesDb: VacanciesDb)
 
     suspend fun removeFromFavorites(vacanciesId: String)

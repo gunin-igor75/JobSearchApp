@@ -10,6 +10,7 @@ data class VacanciesDb(
     val lookingNumber: Int? = null,
     val isFavorite: Boolean,
     val title: String,
+    val town: String,
     val company: String,
     val previewText: String,
     val publishedDate: String,

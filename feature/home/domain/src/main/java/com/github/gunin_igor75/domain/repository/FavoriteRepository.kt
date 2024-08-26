@@ -8,6 +8,8 @@ interface FavoriteRepository {
 
     fun observeIsFavorites(vacanciesId: String): Flow<Boolean>
 
+    fun getCountFavorites(): Flow<Int>
+
     suspend fun addFavorite(favoriteVacancyModel: FavoriteVacancyModel)
 
     suspend fun removeFromFavorites(vacanciesId: String)

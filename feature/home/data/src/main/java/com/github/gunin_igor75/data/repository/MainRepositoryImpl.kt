@@ -40,6 +40,7 @@ class MainRepositoryImpl(
     private val _vacancies: MutableStateFlow<DataResult<List<VacanciesModel>>> =
         MutableStateFlow(DataResult.Initial())
 
+
     override fun getOffers(): StateFlow<DataResult<List<OfferModel>>> = _offers.asStateFlow()
 
     override fun getVacanciesState(): Flow<DataResult<List<VacanciesModel>>> =
@@ -61,6 +62,7 @@ class MainRepositoryImpl(
     private suspend fun getData() {
         val isInternetConnected = Utils.hasInternetConnection(context)
         if (isInternetConnected) {
+            _vacancies.value = DataResult.Loading()
             try {
                 val response = networkSource.fetchData()
                 if (response.isSuccessful && response.body() != null) {
@@ -79,5 +81,9 @@ class MainRepositoryImpl(
         } else {
             _vacancies.value = DataResult.Error(API_INTERNET_MESSAGE)
         }
+    }
+
+    companion object {
+        private const val TAG = "MainRepository"
     }
 }
