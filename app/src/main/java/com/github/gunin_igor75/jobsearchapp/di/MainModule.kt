@@ -6,6 +6,6 @@ import org.koin.dsl.module
 
 internal val mainModule = module {
     viewModel<MainViewModel>{
-        MainViewModel(getFavoritesVacancies = get())
+        MainViewModel(getFavoritesVacanciesUseCase = get())
     }
 }

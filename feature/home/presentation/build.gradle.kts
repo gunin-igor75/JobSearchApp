@@ -54,6 +54,7 @@ dependencies {
 
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     //viewbinding-delegate
     implementation(libs.viewbinding.delegate.kirich)

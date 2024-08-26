@@ -5,7 +5,7 @@ import com.github.gunin_igor75.domain.model.VacanciesModel
 import com.github.gunin_igor75.domain.repository.MainRepository
 import kotlinx.coroutines.flow.Flow
 
-class GetVacanciesState(
+class GetVacanciesStateUseCase(
     private val repository: MainRepository<DataResult<List<VacanciesModel>>>
 ) {
     operator fun invoke(): Flow<DataResult<List<VacanciesModel>>> = repository.getVacanciesState()

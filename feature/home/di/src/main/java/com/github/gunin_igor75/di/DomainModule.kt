@@ -1,29 +1,29 @@
 package com.github.gunin_igor75.di
 
-import com.github.gunin_igor75.domain.usecase.AddFavorite
-import com.github.gunin_igor75.domain.usecase.GetFavoritesVacancies
-import com.github.gunin_igor75.domain.usecase.GetOffers
-import com.github.gunin_igor75.domain.usecase.IsFavoritesVacancy
-import com.github.gunin_igor75.domain.usecase.RemoveFromFavorites
+import com.github.gunin_igor75.domain.usecase.AddFavoriteUseCase
+import com.github.gunin_igor75.domain.usecase.GetFavoritesVacanciesUseCase
+import com.github.gunin_igor75.domain.usecase.GetOffersUseCase
+import com.github.gunin_igor75.domain.usecase.IsFavoritesVacancyUseCase
+import com.github.gunin_igor75.domain.usecase.RemoveFromFavoritesUseCase
 import org.koin.dsl.module
 
 internal val domainModule = module {
-    factory<GetFavoritesVacancies> {
-        GetFavoritesVacancies(repository = get())
+    factory<GetFavoritesVacanciesUseCase> {
+        GetFavoritesVacanciesUseCase(repository = get())
     }
-    factory<IsFavoritesVacancy> {
-        IsFavoritesVacancy(repository = get())
+    factory<IsFavoritesVacancyUseCase> {
+        IsFavoritesVacancyUseCase(repository = get())
     }
-    factory<AddFavorite> {
-        AddFavorite(repository = get())
+    factory<AddFavoriteUseCase> {
+        AddFavoriteUseCase(repository = get())
     }
-    factory<RemoveFromFavorites> {
-        RemoveFromFavorites(repository = get())
+    factory<RemoveFromFavoritesUseCase> {
+        RemoveFromFavoritesUseCase(repository = get())
     }
-    factory<GetOffers> {
-        GetOffers(repository = get())
+    factory<GetOffersUseCase> {
+        GetOffersUseCase(repository = get())
     }
-    factory<GetFavoritesVacancies> {
-        GetFavoritesVacancies(repository = get())
+    factory<GetFavoritesVacanciesUseCase> {
+        GetFavoritesVacanciesUseCase(repository = get())
     }
 }

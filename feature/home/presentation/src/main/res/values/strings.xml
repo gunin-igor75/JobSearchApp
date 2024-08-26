@@ -34,4 +34,20 @@
     <string name="count_vacancies">%d вакансий</string>
     <string name="compliance">По соответствию</string>
     <string name="icon_sort">icon sort</string>
+    <string name="eye">eye</string>
+    <string name="shared">shared</string>
+    <string name="favorite">favorite</string>
+    <string name="experience_job">Требуемый опыт:%s</string>
+    <string name="title_applied">%d %s уже</string>
+    <string name="icon_avatar_smail">icon avatar smail</string>
+    <string name="content_applied">%s</string>
+    <string name="title_looking">%d %s</string>
+    <string name="content_looking">сейчас %s</string>
+    <string name="image_map">image map</string>
+    <string name="location_address">%s,%s,%s</string>
+    <string name="description_company"><![CDATA[MOBYRIX- динамично развивающаяся продуктовая IT-компания, специализирующаяся на разработке мобильных приложений для iOS и Android. Наша команда работает над собственными продуктами в разнообразных сферах: от утилит до развлечений и бизнес-приложений.Мы ценим талант и стремление к инновациям и в данный момент в поиске талантливогоUX/UI Designer, готового присоединиться к нашей команде и внести значимый вклад в развитие наших проектов.]]></string>
+    <string name="you_task">Ваши задачи</string>
+    <string name="task">-Проектировать пользовательский опыт, проводить UX исследования;-Разрабатывать адаптивный дизайн интерфейса для мобильных приложений;-Разрабатывать быстрые прототипы для тестирования идеи дизайна и их последующая; интеграция на основе обратной связи от команды и пользователей;-Взаимодействовать с командой разработчиков для обеспечения точной реализации ваших дизайнов;-Анализ пользовательского опыта и адаптация под тренды.</string>
+    <string name="questions_title">Задайте вопрос работодателю</string>
+    <string name="questions_response">Он получит его с откликом на вакансию</string>
 </resources>
