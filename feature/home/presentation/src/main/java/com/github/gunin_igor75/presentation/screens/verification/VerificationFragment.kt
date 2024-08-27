@@ -52,6 +52,7 @@ class VerificationFragment : BaseFragment(R.layout.fragment_verification) {
 
     private fun settingActionUponChangeEditText() {
         with(binding) {
+            editTextCode1.requestFocus()
             checkValueEditText(editTextCode1) {
                 val isValid = vm.setStateActiveButtonEdit1(it)
                 if (isValid) editTextCode2.requestFocus()

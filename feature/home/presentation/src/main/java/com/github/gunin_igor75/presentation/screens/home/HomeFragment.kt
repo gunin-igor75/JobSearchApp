@@ -8,6 +8,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
+import com.github.gunin_igor75.common.base.utils.Constants
+import com.github.gunin_igor75.common.base.utils.Constants.Companion.COUNT_BEGIN_LIST_VACANCIES
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.adapter.UiOfferAdapter
 import com.github.gunin_igor75.presentation.adapter.UiVacancyAdapter
@@ -45,12 +47,27 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
 
     private val vm: HomeViewModel by viewModel()
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerViewOffers()
         setupRecyclerViewVacancies()
         observeViewModelOffers()
         observeViewModelVacancies()
+
+    }
+
+    private fun setupButtonCountVacancies(countVacancies: Int) {
+        with(binding.buttonCountVacancies){
+            if (countVacancies > COUNT_BEGIN_LIST_VACANCIES) {
+                visibility = View.VISIBLE
+                val remainder = countVacancies - COUNT_BEGIN_LIST_VACANCIES
+                val result = resources.getQuantityString(R.plurals.more_vacancies, remainder, remainder)
+                text = result
+            } else {
+                visibility = View.GONE
+            }
+        }
     }
 
     private fun setupRecyclerViewOffers() {
@@ -75,10 +92,10 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
         lifecycleScope.launch {
             vm.getOffers().flowWithLifecycle(viewLifecycleOwner.lifecycle).collect { offers ->
                 if (offers != null) {
-                    binding.recyclerViewOffers.isVisible = true
+                    binding.recyclerViewOffers.visibility = View.VISIBLE
                     uiOfferAdapter.items = offers
                 } else {
-                    binding.recyclerViewOffers.isVisible = false
+                    binding.recyclerViewOffers.visibility = View.GONE
                 }
             }
         }
@@ -92,8 +109,9 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
 
                 }
                 if (state.data != null) {
-                    val list = state.data.take(3)
+                    val list = state.data.take(COUNT_BEGIN_LIST_VACANCIES)
                     uiVacancyAdapter.items = list
+                    setupButtonCountVacancies(state.data.size)
                 }
             }
         }

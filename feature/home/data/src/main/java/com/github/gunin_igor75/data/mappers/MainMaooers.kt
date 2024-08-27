@@ -6,6 +6,7 @@ import com.github.gunin_igor75.domain.model.OfferModel
 import com.github.gunin_igor75.domain.model.SalaryModel
 import com.github.gunin_igor75.domain.model.VacanciesModel
 import com.github.gunin_igor75.network.dto.DataContainer
+import java.util.UUID
 
 
 fun List<DataContainer.OfferDto>.toOffersModels() = map { it.toOfferModel() }
@@ -13,6 +14,7 @@ fun List<DataContainer.OfferDto>.toOffersModels() = map { it.toOfferModel() }
 fun List<DataContainer.VacanciesDto>.toVacanciesModels() = map { it.toVacanciesModel() }
 
 private fun DataContainer.OfferDto.toOfferModel() = OfferModel(
+    listItemId = UUID.randomUUID().toString(),
     id = id,
     title = title,
     link = link,

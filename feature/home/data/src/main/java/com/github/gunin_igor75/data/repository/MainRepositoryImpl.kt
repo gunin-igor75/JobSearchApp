@@ -4,6 +4,7 @@ import android.content.Context
 import com.github.gunin_igor75.common.base.model.DataResult
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.API_INTERNET_MESSAGE
 import com.github.gunin_igor75.common.base.utils.Utils
+import com.github.gunin_igor75.data.mappers.toFavoriteVacancyModel
 import com.github.gunin_igor75.data.mappers.toOffersModels
 import com.github.gunin_igor75.data.mappers.toVacanciesModels
 import com.github.gunin_igor75.domain.model.OfferModel
@@ -37,16 +38,18 @@ class MainRepositoryImpl(
     private val _offers: MutableStateFlow<DataResult<List<OfferModel>>> =
         MutableStateFlow(DataResult.Initial())
 
-    private val _vacancies: MutableStateFlow<DataResult<List<VacanciesModel>>> =
+    private val _vacanciesState: MutableStateFlow<DataResult<List<VacanciesModel>>> =
         MutableStateFlow(DataResult.Initial())
 
+    private val _vacancies:MutableList<VacanciesModel> = mutableListOf()
 
     override fun getOffers(): StateFlow<DataResult<List<OfferModel>>> = _offers.asStateFlow()
 
     override fun getVacanciesState(): Flow<DataResult<List<VacanciesModel>>> =
-        _vacancies.combine(repoFavorite.getFavoritesVacancies()) { state, favorites ->
+        _vacanciesState.combine(repoFavorite.getFavoritesVacancies()) { state, favorites ->
             if (state is DataResult.Success) {
                 val vacancies = state.data?.map { vac ->
+                    if (vac.isFavorite) repoFavorite.addFavorite(vac.toFavoriteVacancyModel())
                     if (favorites.any { it.id == vac.id }) {
                         vac.copy(isFavorite = true)
                     } else {
@@ -62,7 +65,7 @@ class MainRepositoryImpl(
     private suspend fun getData() {
         val isInternetConnected = Utils.hasInternetConnection(context)
         if (isInternetConnected) {
-            _vacancies.value = DataResult.Loading()
+            _vacanciesState.value = DataResult.Loading()
             try {
                 val response = networkSource.fetchData()
                 if (response.isSuccessful && response.body() != null) {
@@ -70,16 +73,16 @@ class MainRepositoryImpl(
                         val offers = it.offers?.toOffersModels()
                         _offers.value = DataResult.Success(offers)
                         val vacancies = it.vacancies.toVacanciesModels()
-                        _vacancies.value = DataResult.Success(vacancies)
+                        _vacanciesState.value = DataResult.Success(vacancies)
                     }
                 } else {
-                    _vacancies.value = DataResult.Error(response.message())
+                    _vacanciesState.value = DataResult.Error(response.message())
                 }
             } catch (e: Exception) {
-                _vacancies.value = DataResult.Error(e.toString())
+                _vacanciesState.value = DataResult.Error(e.toString())
             }
         } else {
-            _vacancies.value = DataResult.Error(API_INTERNET_MESSAGE)
+            _vacanciesState.value = DataResult.Error(API_INTERNET_MESSAGE)
         }
     }
 

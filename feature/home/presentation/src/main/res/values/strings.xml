@@ -58,4 +58,21 @@
         <item quantity="many">Сечас просматривают %d человек</item>
         <item quantity="other">%d</item>
     </plurals>
+
+    <plurals name="more_vacancies">
+        <item quantity="zero">Еще %d вакансий</item>
+        <item quantity="one">Еще %d вакансия</item>
+        <item quantity="few">Еще %d вакансии</item>
+        <item quantity="many">Еще %d вакансий</item>
+        <item quantity="other">%d</item>
+    </plurals>
+
+    <plurals name="count_vacancies">
+        <item quantity="zero">%d вакансий</item>
+        <item quantity="one">%d вакансия</item>
+        <item quantity="few">%d вакансии</item>
+        <item quantity="many">%d вакансий</item>
+        <item quantity="other">%d</item>
+    </plurals>
+
 </resources>

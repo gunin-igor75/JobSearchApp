@@ -21,7 +21,7 @@ import java.util.UUID
 fun List<OfferModel>.toUiOffers() = map { it.toUiOffer() }
 
 private fun OfferModel.toUiOffer() = UiOffer(
-    listItemId = UUID.randomUUID().toString(),
+    listItemId = listItemId,
     id = id,
     title = title.trim(),
     link = link,

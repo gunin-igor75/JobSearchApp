@@ -15,5 +15,6 @@ class Constants {
         const val OFFER_ID_2 = "level_up_resume"
         const val OFFER_ID_3 = "temporary_job"
         const val PREFIX_DATE = "Опубликовано"
+        const val COUNT_BEGIN_LIST_VACANCIES = 3
     }
 }
