@@ -44,12 +44,17 @@ dependencies {
     //module
     implementation(project(":feature:favorites:domain"))
     implementation(project(":core:common"))
+    implementation(project(":core:repo"))
 
     //navigation
     implementation(libs.androidx.navigation.fragment.ktx)
 
     //viewbinding-delegate
     implementation(libs.viewbinding.delegate.kirich)
+
+    //adapterDelegates
+    implementation(libs.adapter.delegates.core)
+    implementation(libs.adapter.delegates.viewbinding)
 
     //koin
     implementation(libs.koin.android)

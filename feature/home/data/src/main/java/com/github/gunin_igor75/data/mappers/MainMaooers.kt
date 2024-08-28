@@ -5,7 +5,7 @@ import com.github.gunin_igor75.common.base.utils.Constants.Companion.PATTERN_DAT
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.PREFIX_DATE
 import com.github.gunin_igor75.common.base.model.AddressModel
 import com.github.gunin_igor75.common.base.model.ExperienceModel
-import com.github.gunin_igor75.domain.model.OfferModel
+import com.github.gunin_igor75.common.base.model.OfferModel
 import com.github.gunin_igor75.common.base.model.SalaryModel
 import com.github.gunin_igor75.common.base.model.VacanciesModel
 import com.github.gunin_igor75.network.dto.DataContainer

@@ -7,7 +7,7 @@ import com.github.gunin_igor75.common.base.utils.Constants.Companion.API_INTERNE
 import com.github.gunin_igor75.common.base.utils.Utils
 import com.github.gunin_igor75.data.mappers.toOffersModels
 import com.github.gunin_igor75.data.mappers.toVacanciesModels
-import com.github.gunin_igor75.domain.model.OfferModel
+import com.github.gunin_igor75.common.base.model.OfferModel
 import com.github.gunin_igor75.domain.repository.MainRepository
 import com.github.gunin_igor75.network.NetworkSource
 import com.github.gunin_igor75.network.dto.DataContainer

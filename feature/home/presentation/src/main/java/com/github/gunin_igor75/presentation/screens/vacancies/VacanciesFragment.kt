@@ -10,7 +10,8 @@ import com.github.gunin_igor75.common.base.base.BaseFragment
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.adapter.UiVacancyAdapter
 import com.github.gunin_igor75.presentation.databinding.FragmentVacanciesBinding
-import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationSimple
+import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
+import com.github.gunin_igor75.repo.mappers.toFavoriteVacancyModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -27,7 +28,10 @@ class VacanciesFragment : BaseFragment(R.layout.fragment_vacancies) {
                 findNavController().navigate(action)
             },
             onClickFavorite = {
-                if (it.isFavorite) vm.removeFromFavorites(it.listItemId) else vm.addFavoriteVacancies(it)
+                val favorite = it.toFavoriteVacancyModel()
+                if (it.isFavorite) vm.removeFromFavorites(it.listItemId) else vm.addFavoriteVacancies(
+                    favorite.copy(isFavorite = true)
+                )
             }
         )
     }
@@ -51,7 +55,11 @@ class VacanciesFragment : BaseFragment(R.layout.fragment_vacancies) {
     private fun observeCountVacancies() {
         lifecycleScope.launch {
             vm.getCountVacancies().flowWithLifecycle(viewLifecycleOwner.lifecycle).collect{ num ->
-                val text = resources.getQuantityString(R.plurals.count_vacancies, num, num)
+                val text = resources.getQuantityString(
+                    com.github.gunin_igor75.common.R.plurals.count_vacancies,
+                    num,
+                    num
+                )
                 binding.textViewCountVacancies.text = text
             }
         }

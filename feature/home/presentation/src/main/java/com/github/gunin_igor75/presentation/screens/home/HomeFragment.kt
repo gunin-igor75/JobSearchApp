@@ -15,8 +15,9 @@ import com.github.gunin_igor75.presentation.adapter.UiOfferAdapter
 import com.github.gunin_igor75.presentation.adapter.UiVacancyAdapter
 import com.github.gunin_igor75.presentation.databinding.FragmentHomeBinding
 import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationOffers
-import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationSimple
+import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
 import com.github.gunin_igor75.presentation.utils.extension.followToLink
+import com.github.gunin_igor75.repo.mappers.toFavoriteVacancyModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -40,7 +41,10 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
                 findNavController().navigate(action)
             },
             onClickFavorite = {
-                if (it.isFavorite) vm.removeFromFavorites(it.listItemId) else vm.addFavoriteVacancies(it)
+                val favorite = it.toFavoriteVacancyModel()
+                if (it.isFavorite) vm.removeFromFavorites(it.listItemId) else vm.addFavoriteVacancies(
+                    favorite.copy(isFavorite = true)
+                )
             }
         )
     }

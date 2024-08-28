@@ -2,7 +2,7 @@ package com.github.gunin_igor75.presentation.adapter
 
 import com.github.gunin_igor75.common.base.model.ListItem
 import com.github.gunin_igor75.presentation.databinding.CardItemQuestionBinding
-import com.github.gunin_igor75.presentation.model.UiQuestion
+import com.github.gunin_igor75.common.base.model.UiQuestion
 import com.github.gunin_igor75.presentation.utils.UiQuestionDffUtilCallback
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding

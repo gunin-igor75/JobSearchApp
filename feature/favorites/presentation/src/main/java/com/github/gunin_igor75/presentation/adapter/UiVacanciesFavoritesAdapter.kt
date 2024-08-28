@@ -3,29 +3,29 @@ package com.github.gunin_igor75.presentation.adapter
 import androidx.core.view.isVisible
 import com.github.gunin_igor75.common.R
 import com.github.gunin_igor75.common.base.model.ListItem
-import com.github.gunin_igor75.common.base.model.UiVacancy
+import com.github.gunin_igor75.common.base.model.UiVacancyFavorite
 import com.github.gunin_igor75.common.databinding.CardItemVacanciesBinding
+import com.github.gunin_igor75.presentation.utils.UiVacancyFavoriteDffUtilCallback
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 
-class UiVacancyAdapter(
-    onClickItem: (UiVacancy) -> Unit,
-    onClickFavorite: (UiVacancy) -> Unit
-) : AsyncListDifferDelegationAdapter<ListItem>(com.github.gunin_igor75.presentation.utils.UiVacancyDffUtilCallback) {
+class UiVacanciesFavoritesAdapter(
+    onClickFavorite: (UiVacancyFavorite) -> Unit,
+) : AsyncListDifferDelegationAdapter<ListItem>(UiVacancyFavoriteDffUtilCallback) {
 
     init {
         delegatesManager
-            .addDelegate(uiVacancyDelegate(
-                onClickItem = onClickItem,
-                onClickFavorite = onClickFavorite
-            ))
+            .addDelegate(
+                uiVacancyDelegate(
+                    onClickFavorite = onClickFavorite
+                )
+            )
     }
 
     private fun uiVacancyDelegate(
-        onClickItem: (UiVacancy) -> Unit,
-        onClickFavorite: (UiVacancy) -> Unit
+        onClickFavorite: (UiVacancyFavorite) -> Unit,
     ) =
-        adapterDelegateViewBinding<UiVacancy, ListItem, CardItemVacanciesBinding>(
+        adapterDelegateViewBinding<UiVacancyFavorite, ListItem, CardItemVacanciesBinding>(
             { layoutInflater, container ->
                 CardItemVacanciesBinding.inflate(
                     layoutInflater,
@@ -44,7 +44,7 @@ class UiVacancyAdapter(
                     textViewVacanciesTitle.text = item.title
                     textViewVacanciesAddress.text = item.town
                     textViewVacanciesCompany.text = item.company
-                    textViewExperience.text = item.experiens
+                    textViewExperience.text = item.previewText
                     textViewPublicationDate.text = item.publishedDate
                     val resDrawable =
                         if (item.isFavorite) {
@@ -53,9 +53,6 @@ class UiVacancyAdapter(
                     imageViewFavorite.setImageResource(resDrawable)
                     imageViewFavorite.setOnClickListener {
                         onClickFavorite(item)
-                    }
-                    root.setOnClickListener {
-                        onClickItem(item)
                     }
                 }
             }

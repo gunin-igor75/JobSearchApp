@@ -9,14 +9,15 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
+import com.github.gunin_igor75.common.base.model.UiQuestion
+import com.github.gunin_igor75.common.base.model.UiVacancy
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.INDEX_MENU_ITEM_FAVORITE
+import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.adapter.UiQuestionAdapter
 import com.github.gunin_igor75.presentation.databinding.FragmentVacanciesDetailsBinding
 import com.github.gunin_igor75.presentation.model.UiContainer
-import com.github.gunin_igor75.presentation.model.UiQuestion
-import com.github.gunin_igor75.presentation.model.UiVacancy
-import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationSimple
+import com.github.gunin_igor75.repo.mappers.toFavoriteVacancyModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -80,22 +81,24 @@ class VacanciesDetailsFragment : BaseFragment(R.layout.fragment_vacancies_detail
 
     private fun setupBlocksAppliedLooking(vacancy: UiVacancy) {
         with(binding) {
-            if (vacancy.appliedNumber == null && vacancy.lookingNumber == null) {
+            val numApplied = vacancy.appliedNumber
+            val numLooking = vacancy.lookingNumber
+            if (numApplied == null && numLooking == null) {
                 frameLayout.visibility = View.GONE
                 return
             }
             frameLayout.visibility = View.VISIBLE
-            if (vacancy.appliedNumber != null) {
-                val num = vacancy.appliedNumber
-                val appliedText = resources.getQuantityString(R.plurals.people_response, num, num)
+            if (numApplied != null) {
+                val appliedText =
+                    resources.getQuantityString(R.plurals.people_response, numApplied, numApplied)
                 includeAppliedLooking.textViewTitleApplied.text = appliedText
                 includeAppliedLooking.linearLayoutApplied.visibility = View.VISIBLE
             } else {
                 includeAppliedLooking.linearLayoutApplied.visibility = View.GONE
             }
-            if (vacancy.lookingNumber != null) {
-                val num = vacancy.lookingNumber
-                val lookingText = resources.getQuantityString(R.plurals.people_looking, num, num)
+            if (numLooking != null) {
+                val lookingText =
+                    resources.getQuantityString(R.plurals.people_looking, numLooking, numLooking)
                 includeAppliedLooking.textViewTitleLooking.text = lookingText
                 includeAppliedLooking.linearLayoutLooking.visibility = View.VISIBLE
             } else {
@@ -129,7 +132,7 @@ class VacanciesDetailsFragment : BaseFragment(R.layout.fragment_vacancies_detail
                     image.setIcon(icon)
                     image.setOnMenuItemClickListener {
                         if (isFavorite) vm.removeFromFavorites(id) else vm.addFavoriteVacancies(
-                            vacancy
+                            vacancy.copy(isFavorite = true).toFavoriteVacancyModel()
                         )
                         true
                     }

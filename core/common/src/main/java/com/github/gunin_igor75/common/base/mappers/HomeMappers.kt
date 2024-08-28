@@ -1,15 +1,14 @@
-package com.github.gunin_igor75.presentation.mappers
+package com.github.gunin_igor75.common.base.mappers
 
 import com.github.gunin_igor75.common.R
 import com.github.gunin_igor75.common.base.model.AddressModel
-import com.github.gunin_igor75.common.base.model.FavoriteVacancyModel
+import com.github.gunin_igor75.common.base.model.OfferModel
+import com.github.gunin_igor75.common.base.model.UiOffer
+import com.github.gunin_igor75.common.base.model.UiVacancy
 import com.github.gunin_igor75.common.base.model.VacanciesModel
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.OFFER_ID_1
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.OFFER_ID_2
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.OFFER_ID_3
-import com.github.gunin_igor75.domain.model.OfferModel
-import com.github.gunin_igor75.presentation.model.UiOffer
-import com.github.gunin_igor75.presentation.model.UiVacancy
 
 
 fun List<OfferModel>.toUiOffers() = map { it.toUiOffer() }
@@ -43,16 +42,6 @@ fun VacanciesModel.toUiVacancy() = UiVacancy(
     publishedDate = publishedDate
 )
 
-fun UiVacancy.toFavoriteVacancyModel() = FavoriteVacancyModel(
-    id = listItemId,
-    lookingNumber = lookingNumber,
-    isFavorite = isFavorite,
-    title = title,
-    town = town,
-    company = company,
-    previewText = experiens,
-    publishedDate = publishedDate,
-)
 
 private fun getDrawableResId(id: String?) =
     when (id) {
@@ -68,6 +57,3 @@ private fun convertSchedules(list: List<String>) =
 private fun convertAddress(addressModel: AddressModel) =
     "${addressModel.town}, ${addressModel.street}, ${addressModel.house}"
 
-fun main() {
-
-}

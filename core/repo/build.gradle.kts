@@ -39,6 +39,10 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    //lifecycle
+    implementation(libs.androidx.lifecycle.core)
+    implementation(libs.androidx.lifecycle.viewmodel)
+
     implementation(project(":core:local"))
     implementation(project(":core:common"))
 

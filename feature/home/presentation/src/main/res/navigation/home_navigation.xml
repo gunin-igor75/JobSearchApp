@@ -47,7 +47,7 @@
         tools:layout="@layout/fragment_vacancies_details" >
         <argument
             android:name="vacancy"
-            app:argType="com.github.gunin_igor75.presentation.model.UiVacancy" />
+            app:argType="com.github.gunin_igor75.common.base.model.UiVacancy" />
         <action
             android:id="@+id/action_vacanciesDetailsFragment2_to_responseFragment"
             app:destination="@id/responseFragment" />

@@ -4,11 +4,11 @@ import androidx.lifecycle.viewModelScope
 import com.github.gunin_igor75.common.base.model.DataResult
 import com.github.gunin_igor75.domain.usecase.GetOffersUseCase
 import com.github.gunin_igor75.domain.usecase.GetVacanciesStateUseCase
-import com.github.gunin_igor75.presentation.base.BaseFavoriteViewModel
-import com.github.gunin_igor75.presentation.mappers.toUiOffers
-import com.github.gunin_igor75.presentation.mappers.toUiVacancies
+import com.github.gunin_igor75.repo.base.BaseFavoriteViewModel
+import com.github.gunin_igor75.common.base.mappers.toUiOffers
+import com.github.gunin_igor75.common.base.mappers.toUiVacancies
 import com.github.gunin_igor75.presentation.model.HomeStateHolder
-import com.github.gunin_igor75.presentation.model.UiOffer
+import com.github.gunin_igor75.common.base.model.UiOffer
 import com.github.gunin_igor75.repo.domain.usecase.AddFavoriteUseCase
 import com.github.gunin_igor75.repo.domain.usecase.RemoveFromFavoritesUseCase
 import kotlinx.coroutines.channels.Channel

@@ -1,4 +1,4 @@
-package com.github.gunin_igor75.presentation.utils.decoration
+package com.github.gunin_igor75.common.base.utils
 
 import android.graphics.Rect
 import android.view.View

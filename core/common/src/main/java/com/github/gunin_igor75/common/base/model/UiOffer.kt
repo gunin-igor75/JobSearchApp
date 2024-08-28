@@ -1,7 +1,6 @@
-package com.github.gunin_igor75.presentation.model
+package com.github.gunin_igor75.common.base.model
 
 import androidx.annotation.DrawableRes
-import com.github.gunin_igor75.common.base.model.ListItem
 
 data class UiOffer(
     override val listItemId: String,

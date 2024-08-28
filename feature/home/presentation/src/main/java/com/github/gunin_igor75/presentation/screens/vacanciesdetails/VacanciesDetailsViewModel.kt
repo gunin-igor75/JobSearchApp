@@ -1,8 +1,8 @@
 package com.github.gunin_igor75.presentation.screens.vacanciesdetails
 
 import androidx.lifecycle.viewModelScope
-import com.github.gunin_igor75.presentation.base.BaseFavoriteViewModel
-import com.github.gunin_igor75.presentation.model.UiQuestion
+import com.github.gunin_igor75.repo.base.BaseFavoriteViewModel
+import com.github.gunin_igor75.common.base.model.UiQuestion
 import com.github.gunin_igor75.repo.domain.usecase.AddFavoriteUseCase
 import com.github.gunin_igor75.repo.domain.usecase.IsFavoritesVacancyUseCase
 import com.github.gunin_igor75.repo.domain.usecase.RemoveFromFavoritesUseCase

@@ -3,7 +3,7 @@ package com.github.gunin_igor75.presentation.adapter
 import androidx.core.view.isVisible
 import com.github.gunin_igor75.common.base.model.ListItem
 import com.github.gunin_igor75.presentation.databinding.CardItemOfferBinding
-import com.github.gunin_igor75.presentation.model.UiOffer
+import com.github.gunin_igor75.common.base.model.UiOffer
 import com.github.gunin_igor75.presentation.utils.UiOfferDffUtilCallback
 import com.hannesdorfmann.adapterdelegates4.AsyncListDifferDelegationAdapter
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
