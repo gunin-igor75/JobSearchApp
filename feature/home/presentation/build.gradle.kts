@@ -67,6 +67,9 @@ dependencies {
     //koin
     implementation(libs.koin.android)
 
+    //shimmer
+    implementation(libs.shimmer.core)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

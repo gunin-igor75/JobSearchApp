@@ -9,13 +9,13 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.API_ERROR_LOAD_DATA
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.COUNT_BEGIN_LIST_VACANCIES
+import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
 import com.github.gunin_igor75.common.base.utils.Utils
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.adapter.UiOfferAdapter
 import com.github.gunin_igor75.presentation.adapter.UiVacancyAdapter
 import com.github.gunin_igor75.presentation.databinding.FragmentHomeBinding
 import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationOffers
-import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
 import com.github.gunin_igor75.presentation.utils.extension.followToLink
 import com.github.gunin_igor75.repo.mappers.toFavoriteVacancyModel
 import kotlinx.coroutines.launch
@@ -111,11 +111,26 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
         lifecycleScope.launch {
             vm.vacanciesState.flowWithLifecycle(viewLifecycleOwner.lifecycle).collect { state ->
                 if (state.loading) {
-
+                    with(binding) {
+                        recyclerViewVacancies.visibility = View.GONE
+                        recyclerViewOffers.visibility = View.GONE
+                        shimmerVacancies.visibility = View.VISIBLE
+                        shimmerOffer.visibility = View.VISIBLE
+                        shimmerVacancies.startShimmer()
+                        shimmerOffer.startShimmer()
+                    }
                 }
-                if (state.data != null) {
+                if (!state.loading && state.data != null) {
                     val list = state.data.take(COUNT_BEGIN_LIST_VACANCIES)
-                    uiVacancyAdapter.items = list
+                    with(binding) {
+                        shimmerVacancies.stopShimmer()
+                        shimmerOffer.stopShimmer()
+                        shimmerVacancies.visibility = View.GONE
+                        shimmerOffer.visibility = View.GONE
+                        uiVacancyAdapter.items = list
+                        recyclerViewOffers.visibility = View.VISIBLE
+                        recyclerViewVacancies.visibility = View.VISIBLE
+                    }
                     setupButtonCountVacancies(state.data.size)
                 }
             }

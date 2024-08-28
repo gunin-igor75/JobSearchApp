@@ -17,7 +17,7 @@ class FakeNetworkSource(
 
     override suspend fun fetchData(): Response<DataContainer> {
         return try {
-            delay(1000)
+            delay(2000)
             val data = Utils.getData(
                 context = context,
                 path = PATH,

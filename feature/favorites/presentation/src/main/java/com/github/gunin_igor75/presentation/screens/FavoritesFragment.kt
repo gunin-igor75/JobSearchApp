@@ -49,7 +49,17 @@ class FavoritesFragment : BaseFragment(R.layout.fragment_favorites) {
         lifecycleScope.launch {
             vm.getFavoritesVacancies().flowWithLifecycle(viewLifecycleOwner.lifecycle).collect{
                 uiVacancyFavoriteAdapter.items = it
+                setupCountFavoriteVacancies(it.size)
             }
         }
+    }
+
+    private fun setupCountFavoriteVacancies(count: Int) {
+        val text = resources.getQuantityString(
+            com.github.gunin_igor75.common.R.plurals.count_vacancies,
+            count,
+            count
+        )
+        binding.textViewCountVacancies.text = text
     }
 }

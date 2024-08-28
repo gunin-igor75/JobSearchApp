@@ -1,7 +1,7 @@
 package com.github.gunin_igor75.repo.data.repository
 
-import com.github.gunin_igor75.repo.data.mappers.toFavoritesVacanciesModels
-import com.github.gunin_igor75.repo.data.mappers.toVacancyDb
+import com.github.gunin_igor75.repo.mappers.toFavoritesVacanciesModels
+import com.github.gunin_igor75.repo.mappers.toVacancyDb
 import com.github.gunin_igor75.common.base.model.FavoriteVacancyModel
 import com.github.gunin_igor75.local.LocalSourceProvider
 import kotlinx.coroutines.flow.Flow

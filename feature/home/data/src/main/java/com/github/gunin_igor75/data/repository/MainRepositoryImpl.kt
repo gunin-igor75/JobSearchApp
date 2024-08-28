@@ -2,17 +2,17 @@ package com.github.gunin_igor75.data.repository
 
 import android.content.Context
 import com.github.gunin_igor75.common.base.model.DataResult
+import com.github.gunin_igor75.common.base.model.OfferModel
 import com.github.gunin_igor75.common.base.model.VacanciesModel
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.API_INTERNET_MESSAGE
 import com.github.gunin_igor75.common.base.utils.Utils
 import com.github.gunin_igor75.data.mappers.toOffersModels
 import com.github.gunin_igor75.data.mappers.toVacanciesModels
-import com.github.gunin_igor75.common.base.model.OfferModel
 import com.github.gunin_igor75.domain.repository.MainRepository
 import com.github.gunin_igor75.network.NetworkSource
 import com.github.gunin_igor75.network.dto.DataContainer
-import com.github.gunin_igor75.repo.data.mappers.toFavoriteVacancyModel
 import com.github.gunin_igor75.repo.domain.repository.FavoriteRepository
+import com.github.gunin_igor75.repo.mappers.toFavoriteVacancyModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -115,9 +115,5 @@ class MainRepositoryImpl(
         } else {
             _vacanciesState.value = DataResult.Error(API_INTERNET_MESSAGE)
         }
-    }
-
-    companion object {
-        private const val TAG = "MainRepository"
     }
 }

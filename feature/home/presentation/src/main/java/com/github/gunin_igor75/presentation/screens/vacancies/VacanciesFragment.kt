@@ -7,10 +7,10 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
+import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.adapter.UiVacancyAdapter
 import com.github.gunin_igor75.presentation.databinding.FragmentVacanciesBinding
-import com.github.gunin_igor75.common.base.utils.MarginItemDecorationSimple
 import com.github.gunin_igor75.repo.mappers.toFavoriteVacancyModel
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel

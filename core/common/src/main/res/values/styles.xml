@@ -63,15 +63,6 @@
         <item name="fontStyle">italic</item>
     </style>
 
-    <style name="RoundedSquare">
-        <item name="cornerSize">8dp</item>
-    </style>
-
-    <style name="ButtonTickets">
-        <item name="fontFamily">@font/sf_pro_display_semibold</item>
-        <item name="android:textSize">16sp</item>
-    </style>
-
     <style name="TextInputLayoutCustom" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="android:textColorHint">@color/gray3</item>
         <item name="hintTextColor">@color/gray3</item>
@@ -94,6 +85,7 @@
 
     <style name="TextEditStyle">
         <item name="android:textColor">@color/white</item>
+        <item name="android:maxLines">1</item>
         <item name="android:textSize">12sp</item>
 
     </style>
@@ -102,6 +94,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">12sp</item>
         <item name="hintTextColor">@color/gray3</item>
+        <item name="android:maxLines">1</item>
         <item name="android:textColorHint">@color/gray3</item>
         <item name="cursorColor">@color/white</item>
     </style>
@@ -115,11 +108,6 @@
         <item name="android:maxLength">1</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/gray3</item>
-    </style>
-
-    <style name="MyTransparentBottomSheetDialogTheme" parent="Theme.AppCompat.Light">
-        <item name="android:background">@color/trans_0_5</item>
-        <item name="android:colorBackground">@color/trans_0_5</item>
     </style>
 
 </resources>

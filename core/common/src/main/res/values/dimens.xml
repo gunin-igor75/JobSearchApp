@@ -31,5 +31,6 @@
     <dimen name="card_offer_height">120dp</dimen>
     <dimen name="view_dialog_width">38dp</dimen>
     <dimen name="view_dialog_height">5dp</dimen>
+    <dimen name="info_vac_width">150dp</dimen>
 
 </resources>

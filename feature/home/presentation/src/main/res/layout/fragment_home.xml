@@ -26,6 +26,39 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerOffer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <include
+                        layout="@layout/card_item_offer_loading"
+                        android:layout_width="@dimen/card_offer_width"
+                        android:layout_height="@dimen/card_offer_height" />
+
+                    <include
+                        layout="@layout/card_item_offer_loading"
+                        android:layout_width="@dimen/card_offer_width"
+                        android:layout_height="@dimen/card_offer_height"
+                        android:layout_marginStart="@dimen/dp_1x" />
+
+                    <include
+                        layout="@layout/card_item_offer_loading"
+                        android:layout_width="@dimen/card_offer_width"
+                        android:layout_height="@dimen/card_offer_height"
+                        android:layout_marginStart="@dimen/dp_1x" />
+
+                </LinearLayout>
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
+
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewOffers"
@@ -42,6 +75,28 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4x"
                 android:text="@string/vacancies_for_you" />
+
+            <com.facebook.shimmer.ShimmerFrameLayout
+                android:id="@+id/shimmerVacancies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/card_item_vacancies_loading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </com.facebook.shimmer.ShimmerFrameLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerViewVacancies"

@@ -1,9 +1,9 @@
 package com.github.gunin_igor75.presentation.screens.vacancies
 
-import com.github.gunin_igor75.domain.usecase.GetVacanciesUseCase
-import com.github.gunin_igor75.repo.base.BaseFavoriteViewModel
 import com.github.gunin_igor75.common.base.mappers.toUiVacancies
 import com.github.gunin_igor75.common.base.model.UiVacancy
+import com.github.gunin_igor75.domain.usecase.GetVacanciesUseCase
+import com.github.gunin_igor75.repo.base.BaseFavoriteViewModel
 import com.github.gunin_igor75.repo.domain.usecase.AddFavoriteUseCase
 import com.github.gunin_igor75.repo.domain.usecase.RemoveFromFavoritesUseCase
 import kotlinx.coroutines.flow.Flow
