@@ -47,6 +47,7 @@ dependencies {
     //module
     implementation(project(":feature:home:domain"))
     implementation(project(":core:common"))
+    implementation(project(":core:repo"))
 
     //lifecycle
     implementation(libs.androidx.lifecycle.core)

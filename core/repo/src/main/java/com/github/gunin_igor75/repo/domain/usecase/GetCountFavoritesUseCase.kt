@@ -1,6 +1,6 @@
-package com.github.gunin_igor75.domain.usecase
+package com.github.gunin_igor75.repo.domain.usecase
 
-import com.github.gunin_igor75.domain.repository.FavoriteRepository
+import com.github.gunin_igor75.repo.domain.repository.FavoriteRepository
 
 class GetCountFavoritesUseCase(
     private val repository: FavoriteRepository

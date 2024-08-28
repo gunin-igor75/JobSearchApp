@@ -1,6 +1,6 @@
-package com.github.gunin_igor75.domain.repository
+package com.github.gunin_igor75.repo.domain.repository
 
-import com.github.gunin_igor75.domain.model.FavoriteVacancyModel
+import com.github.gunin_igor75.common.base.model.FavoriteVacancyModel
 import kotlinx.coroutines.flow.Flow
 
 interface FavoriteRepository {

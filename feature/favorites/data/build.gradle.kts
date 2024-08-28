@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:local"))
     implementation(project(":core:network"))
     implementation(project(":core:common"))
+    implementation(project(":core:repo"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

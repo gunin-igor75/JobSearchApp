@@ -9,7 +9,7 @@ data class UiVacancy(
     override val listItemId: String,
     val title: String,
     val salary: String,
-    val previewText: String,
+    val experiens: String,
     val schedules: String,
     val appliedNumber: Int? = null,
     val lookingNumber: Int? = null,

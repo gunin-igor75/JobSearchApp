@@ -1,7 +1,7 @@
-package com.github.gunin_igor75.data.mappers
+package com.github.gunin_igor75.repo.data.mappers
 
-import com.github.gunin_igor75.domain.model.FavoriteVacancyModel
-import com.github.gunin_igor75.domain.model.VacanciesModel
+import com.github.gunin_igor75.common.base.model.FavoriteVacancyModel
+import com.github.gunin_igor75.common.base.model.VacanciesModel
 import com.github.gunin_igor75.local.model.VacanciesDb
 
 fun FavoriteVacancyModel.toVacancyDb() = VacanciesDb(

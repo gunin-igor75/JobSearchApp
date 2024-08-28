@@ -1,18 +1,16 @@
 package com.github.gunin_igor75.presentation.screens.home
 
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.github.gunin_igor75.common.base.model.DataResult
-import com.github.gunin_igor75.domain.usecase.AddFavoriteUseCase
 import com.github.gunin_igor75.domain.usecase.GetOffersUseCase
 import com.github.gunin_igor75.domain.usecase.GetVacanciesStateUseCase
-import com.github.gunin_igor75.domain.usecase.RemoveFromFavoritesUseCase
-import com.github.gunin_igor75.presentation.mappers.toFavoriteVacancyModel
+import com.github.gunin_igor75.presentation.base.BaseFavoriteViewModel
 import com.github.gunin_igor75.presentation.mappers.toUiOffers
 import com.github.gunin_igor75.presentation.mappers.toUiVacancies
 import com.github.gunin_igor75.presentation.model.HomeStateHolder
 import com.github.gunin_igor75.presentation.model.UiOffer
-import com.github.gunin_igor75.presentation.model.UiVacancy
+import com.github.gunin_igor75.repo.domain.usecase.AddFavoriteUseCase
+import com.github.gunin_igor75.repo.domain.usecase.RemoveFromFavoritesUseCase
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -27,9 +25,9 @@ import kotlinx.coroutines.launch
 class HomeViewModel(
     private val getOffersUseCase: GetOffersUseCase,
     private val getVacanciesStateUseCase: GetVacanciesStateUseCase,
-    private val addFavoriteUseCase: AddFavoriteUseCase,
-    private val removeFromFavoritesUseCase: RemoveFromFavoritesUseCase
-) : ViewModel() {
+    addFavoriteUseCase: AddFavoriteUseCase,
+    removeFromFavoritesUseCase: RemoveFromFavoritesUseCase,
+) : BaseFavoriteViewModel(addFavoriteUseCase, removeFromFavoritesUseCase) {
 
     private val _error: Channel<Boolean> = Channel()
     val error: Flow<Boolean> = _error.receiveAsFlow()
@@ -56,17 +54,6 @@ class HomeViewModel(
                     is DataResult.Initial -> {}
                 }
             }.launchIn(viewModelScope)
-        }
-    }
-
-    fun addFavoriteVacancies(uiVacancy: UiVacancy) {
-        viewModelScope.launch {
-            addFavoriteUseCase(uiVacancy.toFavoriteVacancyModel())
-        }
-    }
-    fun removeFromFavorites(vacanciesId: String) {
-        viewModelScope.launch {
-            removeFromFavoritesUseCase(vacanciesId)
         }
     }
 }

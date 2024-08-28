@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:local"))
     implementation(project(":core:common"))
     implementation(project(":core:network"))
+    implementation(project(":core:repo"))
 
     //koin
     implementation(libs.koin.android)

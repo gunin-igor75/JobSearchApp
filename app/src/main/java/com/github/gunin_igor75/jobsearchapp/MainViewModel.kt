@@ -2,7 +2,7 @@ package com.github.gunin_igor75.jobsearchapp
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.github.gunin_igor75.domain.usecase.GetCountFavoritesUseCase
+import com.github.gunin_igor75.repo.domain.usecase.GetCountFavoritesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

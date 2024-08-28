@@ -2,20 +2,20 @@ package com.github.gunin_igor75.presentation.screens.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.isVisible
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.github.gunin_igor75.common.base.base.BaseFragment
-import com.github.gunin_igor75.common.base.utils.Constants
+import com.github.gunin_igor75.common.base.utils.Constants.Companion.API_ERROR_LOAD_DATA
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.COUNT_BEGIN_LIST_VACANCIES
+import com.github.gunin_igor75.common.base.utils.Utils
 import com.github.gunin_igor75.presentation.R
 import com.github.gunin_igor75.presentation.adapter.UiOfferAdapter
 import com.github.gunin_igor75.presentation.adapter.UiVacancyAdapter
 import com.github.gunin_igor75.presentation.databinding.FragmentHomeBinding
 import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationOffers
-import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationVacancies
+import com.github.gunin_igor75.presentation.utils.decoration.MarginItemDecorationSimple
 import com.github.gunin_igor75.presentation.utils.extension.followToLink
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -52,9 +52,10 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerViewOffers()
         setupRecyclerViewVacancies()
-        observeViewModelOffers()
-        observeViewModelVacancies()
-
+        observeOffers()
+        observeVacancies()
+        observeErrorState()
+        launchVacancyDetailsFragment()
     }
 
     private fun setupButtonCountVacancies(countVacancies: Int) {
@@ -81,14 +82,14 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
 
     private fun setupRecyclerViewVacancies() {
         val margin = resources.getDimensionPixelSize(com.github.gunin_igor75.common.R.dimen.dp_1x)
-        val marginDecoration = MarginItemDecorationVacancies(margin)
+        val marginDecoration = MarginItemDecorationSimple(margin)
         with(binding.recyclerViewVacancies) {
             adapter = uiVacancyAdapter
             addItemDecoration(marginDecoration)
         }
     }
 
-    private fun observeViewModelOffers() {
+    private fun observeOffers() {
         lifecycleScope.launch {
             vm.getOffers().flowWithLifecycle(viewLifecycleOwner.lifecycle).collect { offers ->
                 if (offers != null) {
@@ -101,7 +102,7 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
         }
     }
 
-    private fun observeViewModelVacancies() {
+    private fun observeVacancies() {
         vm.getVacanciesState()
         lifecycleScope.launch {
             vm.vacanciesState.flowWithLifecycle(viewLifecycleOwner.lifecycle).collect { state ->
@@ -113,6 +114,20 @@ class HomeFragment: BaseFragment(R.layout.fragment_home) {
                     uiVacancyAdapter.items = list
                     setupButtonCountVacancies(state.data.size)
                 }
+            }
+        }
+    }
+
+    private fun launchVacancyDetailsFragment() {
+        binding.buttonCountVacancies.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment2_to_vacanciesFragment2)
+        }
+    }
+
+    private fun observeErrorState() {
+        lifecycleScope.launch {
+            vm.error.flowWithLifecycle(viewLifecycleOwner.lifecycle).collect { isError ->
+                if (isError) Utils.showAlertDialog(requireContext(), API_ERROR_LOAD_DATA)
             }
         }
     }

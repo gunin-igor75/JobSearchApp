@@ -1,28 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/main_bg"
     android:baselineAligned="false"
     android:orientation="horizontal">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        style="@style/TextInputLayoutCustom"
+        style="@style/TextInputLayoutAppBar"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:background="@drawable/rounded_hint"
         app:startIconDrawable="@drawable/ic_arrow_left">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditTextEmail"
-            style="@style/TextEditStyle"
-            android:layout_width="wrap_content"
+            android:id="@+id/editText"
+            style="@style/TextEditStyleHome"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_find_job_vacancies" />
+            android:background="@drawable/rounded_hint"
+            android:hint="@string/hint_find_job_vacancies"
+            android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <FrameLayout
         android:layout_width="wrap_content"

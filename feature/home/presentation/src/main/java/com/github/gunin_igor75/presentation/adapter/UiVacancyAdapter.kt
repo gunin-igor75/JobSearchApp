@@ -41,11 +41,11 @@ class UiVacancyAdapter(
                     textViewViewingCountVacancies.isVisible = item.lookingNumber != null
                     val number = item.lookingNumber ?: 0
                     textViewViewingCountVacancies.text =
-                        resources.getQuantityString(R.plurals.people_looking, number, number)
+                        resources.getQuantityString(R.plurals.people_viewing, number, number)
                     textViewVacanciesTitle.text = item.title
                     textViewVacanciesAddress.text = item.town
                     textViewVacanciesCompany.text = item.company
-                    textViewExperience.text = item.previewText
+                    textViewExperience.text = item.experiens
                     textViewPublicationDate.text = item.publishedDate
                     val resDrawable =
                         if (item.isFavorite) {

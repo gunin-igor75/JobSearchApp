@@ -36,6 +36,9 @@
         <action
             android:id="@+id/action_homeFragment2_to_vacanciesDetailsFragment2"
             app:destination="@id/vacanciesDetailsFragment2" />
+        <action
+            android:id="@+id/action_homeFragment2_to_vacanciesFragment2"
+            app:destination="@id/vacanciesFragment2" />
     </fragment>
     <fragment
         android:id="@+id/vacanciesDetailsFragment2"
@@ -45,5 +48,26 @@
         <argument
             android:name="vacancy"
             app:argType="com.github.gunin_igor75.presentation.model.UiVacancy" />
+        <action
+            android:id="@+id/action_vacanciesDetailsFragment2_to_responseFragment"
+            app:destination="@id/responseFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/vacanciesFragment2"
+        android:name="com.github.gunin_igor75.presentation.screens.vacancies.VacanciesFragment"
+        android:label="fragment_vacancies"
+        tools:layout="@layout/fragment_vacancies" >
+        <action
+            android:id="@+id/action_vacanciesFragment2_to_vacanciesDetailsFragment2"
+            app:destination="@id/vacanciesDetailsFragment2" />
+    </fragment>
+    <dialog
+        android:id="@+id/responseFragment"
+        android:name="com.github.gunin_igor75.presentation.screens.response.ResponseFragment"
+        android:label="fragment_response"
+        tools:layout="@layout/fragment_response" >
+        <argument
+            android:name="uiContainer"
+            app:argType="com.github.gunin_igor75.presentation.model.UiContainer" />
+    </dialog>
 </navigation>

@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":core:local"))
     implementation(project(":core:network"))
     implementation(project(":core:common"))
+    implementation(project(":core:repo"))
     implementation(project(":feature:home:data"))
     implementation(project(":feature:home:domain"))
     implementation(project(":feature:home:presentation"))
@@ -71,6 +72,7 @@ dependencies {
 
     //koin
     implementation(libs.koin.android)
+    implementation(project(":core:repo"))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

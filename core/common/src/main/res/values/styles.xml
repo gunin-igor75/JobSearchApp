@@ -83,6 +83,15 @@
         <item name="cursorColor">@color/white</item>
     </style>
 
+    <style name="TextInputLayoutAppBar" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="hintTextColor">@color/gray3</item>
+        <item name="startIconTint">@color/white</item>
+        <item name="boxStrokeColor">@color/gray2</item>
+        <item name="boxBackgroundColor">@color/gray2</item>
+        <item name="cursorColor">@color/white</item>
+    </style>
+
     <style name="TextEditStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">12sp</item>
@@ -106,6 +115,11 @@
         <item name="android:maxLength">1</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textColorHint">@color/gray3</item>
+    </style>
+
+    <style name="MyTransparentBottomSheetDialogTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/trans_0_5</item>
+        <item name="android:colorBackground">@color/trans_0_5</item>
     </style>
 
 </resources>

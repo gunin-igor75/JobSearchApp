@@ -1,21 +1,15 @@
 package com.github.gunin_igor75.presentation.mappers
 
 import com.github.gunin_igor75.common.R
+import com.github.gunin_igor75.common.base.model.AddressModel
+import com.github.gunin_igor75.common.base.model.FavoriteVacancyModel
+import com.github.gunin_igor75.common.base.model.VacanciesModel
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.OFFER_ID_1
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.OFFER_ID_2
 import com.github.gunin_igor75.common.base.utils.Constants.Companion.OFFER_ID_3
-import com.github.gunin_igor75.common.base.utils.Constants.Companion.PATTERN_DATE_IN
-import com.github.gunin_igor75.common.base.utils.Constants.Companion.PATTERN_DATE_OUT
-import com.github.gunin_igor75.common.base.utils.Constants.Companion.PREFIX_DATE
-import com.github.gunin_igor75.domain.model.AddressModel
-import com.github.gunin_igor75.domain.model.FavoriteVacancyModel
 import com.github.gunin_igor75.domain.model.OfferModel
-import com.github.gunin_igor75.domain.model.VacanciesModel
 import com.github.gunin_igor75.presentation.model.UiOffer
 import com.github.gunin_igor75.presentation.model.UiVacancy
-import java.text.SimpleDateFormat
-import java.util.Locale
-import java.util.UUID
 
 
 fun List<OfferModel>.toUiOffers() = map { it.toUiOffer() }
@@ -35,7 +29,7 @@ fun VacanciesModel.toUiVacancy() = UiVacancy(
     listItemId = id,
     title = title,
     salary = salary.full,
-    previewText = experience.previewText,
+    experiens = experience.text,
     schedules = convertSchedules(schedules),
     appliedNumber = appliedNumber,
     lookingNumber = lookingNumber,
@@ -46,7 +40,7 @@ fun VacanciesModel.toUiVacancy() = UiVacancy(
     isFavorite = isFavorite,
     town = addressModel.town,
     company = company,
-    publishedDate = convertDate(publishedDate)
+    publishedDate = publishedDate
 )
 
 fun UiVacancy.toFavoriteVacancyModel() = FavoriteVacancyModel(
@@ -56,7 +50,7 @@ fun UiVacancy.toFavoriteVacancyModel() = FavoriteVacancyModel(
     title = title,
     town = town,
     company = company,
-    previewText = previewText,
+    previewText = experiens,
     publishedDate = publishedDate,
 )
 
@@ -67,13 +61,6 @@ private fun getDrawableResId(id: String?) =
         OFFER_ID_3 -> R.drawable.ic_offer_note
         else -> null
     }
-
-private fun convertDate(textDate: String): String {
-    val formatIn = SimpleDateFormat(PATTERN_DATE_IN, Locale.getDefault())
-    val date = formatIn.parse(textDate) ?: throw IllegalStateException("$textDate is null")
-    val formatOut = SimpleDateFormat(PATTERN_DATE_OUT, Locale.getDefault())
-    return "$PREFIX_DATE ${formatOut.format(date)}"
-}
 
 private fun convertSchedules(list: List<String>) =
     list.joinToString(",").replaceFirstChar { it.uppercase() }

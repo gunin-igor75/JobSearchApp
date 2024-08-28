@@ -4,5 +4,5 @@ import org.koin.dsl.module
 
 
 val coreModule = module {
-    includes(networkModule, localDataSourceModule)
+    includes(networkModule, localDataSourceModule, repoModule)
 }

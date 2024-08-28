@@ -4,7 +4,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class MarginItemDecorationVacancies(
+class MarginItemDecorationSimple(
     private val spaceSize: Int,
 ) : RecyclerView.ItemDecoration() {
     override fun getItemOffsets(

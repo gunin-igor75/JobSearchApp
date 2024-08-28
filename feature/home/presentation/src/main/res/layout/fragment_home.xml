@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_3x"
                 android:backgroundTint="@color/blue"
-                android:text="@string/button_count_vacancies"
+                tools:text="@string/button_count_vacancies"
                 android:textAppearance="@style/sfProDisplayBold.16sp"
                 app:cornerRadius="@dimen/dp_1x" />
 

@@ -31,18 +31,16 @@ class MainActivity : BaseActivity(R.layout.activity_main) {
     private fun observeViewModel() {
         lifecycleScope.launch {
             vm.countFavoriteVacancies.flowWithLifecycle(lifecycle).collect {
-                if (it > 0) {
-                    updateBadge(it)
-                }
+                updateBadge(it)
             }
         }
     }
 
     private fun updateBadge(count: Int) {
-        if (count <= 0) return
         val menu = binding.bottomNav.menu
         val child = menu.getItem(FAVORITE_ITEM_ID)
         val badge = binding.bottomNav.getOrCreateBadge(child.itemId)
+        badge.isVisible = count != 0
         badge.number = count
     }
 }
