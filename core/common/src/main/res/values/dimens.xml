@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="_28dp">28dp</dimen>
+    <dimen name="_94dp">94dp</dimen>
+    <dimen name="dp_1x">8dp</dimen>
+    <dimen name="dp_2x">16dp</dimen>
+    <dimen name="dp_3x">24dp</dimen>
+    <dimen name="dp_4x">32dp</dimen>
+    <dimen name="dp_5x">40dp</dimen>
+    <dimen name="dp_6x">48dp</dimen>
+    <dimen name="dp_8x">64dp</dimen>
+    <dimen name="dp_9x">72dp</dimen>
+    <dimen name="dp_10x">80dp</dimen>
+    <dimen name="_112dp">112dp</dimen>
+    <dimen name="_40dp">40dp</dimen>
+    <dimen name="_36dp">36dp</dimen>
+    <dimen name="_30dp">30dp</dimen>
+    <dimen name="_20dp">20dp</dimen>
+    <dimen name="_12dp">12dp</dimen>
+    <dimen name="_10dp">10dp</dimen>
+    <dimen name="_6dp">6dp</dimen>
+    <dimen name="_4dp">4dp</dimen>
+    <dimen name="_2dp">2dp</dimen>
+    <dimen name="_1dp">1dp</dimen>
+    <dimen name="_8sp">8</dimen>
+
+
+    <dimen name="code_width">48dp</dimen>
+    <dimen name="code_height">48dp</dimen>
+    <dimen name="card_offer_width">132dp</dimen>
+    <dimen name="card_offer_height">120dp</dimen>
+    <dimen name="view_dialog_width">38dp</dimen>
+    <dimen name="view_dialog_height">5dp</dimen>
+    <dimen name="info_vac_width">150dp</dimen>
+
+</resources>

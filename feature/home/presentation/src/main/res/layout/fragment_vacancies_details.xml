@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vacanciesDetailsFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_2x"
+    tools:context=".screens.vacanciesdetails.VacanciesDetailsFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_toolbar_vacancies_details"
+            android:padding="0dp"
+            app:navigationIcon="@drawable/ic_arrow_left"
+            android:background="@color/main_bg" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTitle"
+                style="@style/sfProDisplayBold.22sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3x"
+                tools:text="UI/UX Designer" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSalaryFull"
+                style="@style/sfProDisplayRegular.14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                tools:text="Уровень дохода не указан" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewExperience"
+                style="@style/sfProDisplayRegular.14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                android:text="@string/experience_job" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewSchedules"
+                style="@style/sfProDisplayRegular.14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1x"
+                tools:text="Полная занятость, полный день" />
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/includeAppliedLooking"
+                    layout="@layout/block_applied_looking"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/dp_3x" />
+            </FrameLayout>
+
+            <include
+                android:id="@+id/includeLocation"
+                layout="@layout/block_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_3x" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewDescriptionCompany"
+                style="@style/sfProDisplayRegular.14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                tools:text="@string/description_company" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/sfProDisplayBold.20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1x"
+                android:text="@string/you_task" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTask"
+                style="@style/sfProDisplayRegular.14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1x"
+                tools:text="@string/task" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/sfProDisplayMedium.14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_4x"
+                android:text="@string/questions_title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                style="@style/sfProDisplayMedium.14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_1x"
+                android:text="@string/questions_response"
+                android:textColor="@color/gray3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/card_item_question"
+                tools:itemCount="3"
+                />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonRespond"
+                style="@style/sfProDisplayRegular.14sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_2x"
+                android:backgroundTint="@color/green"
+                android:text="@string/response"
+                android:textAllCaps="false"
+                app:cornerRadius="@dimen/_20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewPublicationDate" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

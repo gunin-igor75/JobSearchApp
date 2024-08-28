@@ -21,4 +21,20 @@ dependencyResolutionManagement {
 
 rootProject.name = "JobSearchApp"
 include(":app")
- 
+include(":bridge_di_module")
+include(":core:common")
+include(":core:di")
+include(":core:local")
+include(":core:network")
+include(":feature:home:data")
+include(":feature:home:domain")
+include(":feature:home:presentation")
+include(":feature:home:di")
+include(":feature:favorites:data")
+include(":feature:favorites:domain")
+include(":feature:favorites:presentation")
+include(":feature:favorites:di")
+include(":feature:response")
+include(":feature:message")
+include(":feature:profile")
+include(":core:repo")

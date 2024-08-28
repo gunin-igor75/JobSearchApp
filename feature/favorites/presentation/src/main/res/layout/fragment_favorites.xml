@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/favorites"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_2x"
+    tools:context=".screens.FavoritesFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/sfProDisplayBold.20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_4x"
+        android:text="@string/favorites" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewCountVacancies"
+        style="@style/sfProDisplayRegular.14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_3x"
+        android:textColor="@color/gray3"
+        tools:text="1 вакансия" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="2"
+        tools:listitem="@layout/card_item_vacancies" />
+
+</LinearLayout>

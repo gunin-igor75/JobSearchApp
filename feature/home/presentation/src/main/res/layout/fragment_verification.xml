@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/verificationFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/dp_2x"
+    tools:context=".screens.verification.VerificationFragment">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewSendEmail"
+        style="@style/sfProDisplayBold.20sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/send_email" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        style="@style/sfProDisplayMedium.16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x"
+        android:text="@string/information_for_send_email" />
+
+
+    <LinearLayout
+        android:id="@+id/llEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/dp_2x"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextCode1"
+            style="@style/TextEditStyleCode"
+            android:layout_width="@dimen/code_width"
+            android:layout_height="@dimen/code_height"
+            android:hint="@string/star" />
+
+        <EditText
+            android:id="@+id/editTextCode2"
+            style="@style/TextEditStyleCode"
+            android:layout_width="@dimen/code_width"
+            android:layout_height="@dimen/code_height"
+            android:layout_marginStart="@dimen/dp_1x"
+            android:hint="@string/star" />
+
+        <EditText
+            android:id="@+id/editTextCode3"
+            style="@style/TextEditStyleCode"
+            android:layout_width="@dimen/code_width"
+            android:layout_height="@dimen/code_height"
+            android:layout_marginStart="@dimen/dp_1x"
+            android:hint="@string/star" />
+
+        <EditText
+            android:id="@+id/editTextCode4"
+            style="@style/TextEditStyleCode"
+            android:layout_width="@dimen/code_width"
+            android:layout_height="@dimen/code_height"
+            android:layout_marginStart="@dimen/dp_1x"
+            android:hint="@string/star" />
+
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonConfirm"
+        style="@style/sfProDisplayBold.16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x"
+        android:backgroundTint="@color/blue"
+        android:text="@string/confirm"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/dp_1x" />
+
+</LinearLayout>

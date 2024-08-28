@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JobSearchApp</string>
+    <string name="find">Поиск</string>
+    <string name="favorites">Избранное</string>
+    <string name="response">Отклики</string>
+    <string name="message">Сообщения</string>
+    <string name="profile">Прфиль</string>
+    <string name="card_vacancies_viewing_vacancies">Сейчас просматривает 1 человек</string>
+    <string name="icon_favorite_selected">icon favorite selected</string>
+    <string name="icon_confirm">icon confirm</string>
+    <string name="icon_experiences">icon experiences</string>
+    <string name="experiences">Опыт от 1 года до 3 лет</string>
+    <string name="publication_date">Опубликовано %s</string>
+
+    <plurals name="count_vacancies">
+        <item quantity="zero">%d вакансий</item>
+        <item quantity="one">%d вакансия</item>
+        <item quantity="few">%d вакансии</item>
+        <item quantity="many">%d вакансий</item>
+        <item quantity="other">%d</item>
+    </plurals>
+
+    <plurals name="people_viewing">
+        <item quantity="zero">Сечас просматривает %d человек</item>
+        <item quantity="one">Сечас просматривает %d человек</item>
+        <item quantity="few">Сечас просматривают %d человека</item>
+        <item quantity="many">Сечас просматривают %d человек</item>
+        <item quantity="other">%d</item>
+    </plurals>
+</resources>

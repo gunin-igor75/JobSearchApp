@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="sfProDisplayBold">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/sf_pro_display_semibold</item>
+    </style>
+
+    <style name="sfProDisplayBold.22sp">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="sfProDisplayBold.20sp">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="sfProDisplayBold.16sp">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sfProDisplayBold.14sp">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+
+    <style name="sfProDisplayMedium">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/sf_pro_display_medium</item>
+    </style>
+
+    <style name="sfProDisplayMedium.16sp">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sfProDisplayMedium.14sp">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="sfProDisplayRegular">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/sf_pro_display_regular</item>
+    </style>
+
+    <style name="sfProDisplayRegular.16sp">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sfProDisplayRegular.14sp">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="sfProDisplayRegular.10sp">
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="sfProDisplaySemBoldItalic">
+        <item name="android:textColor">@color/white</item>
+        <item name="fontFamily">@font/sf_pro_display_semibold_italic</item>
+    </style>
+
+    <style name="sfProDisplaySemBoldItalic.16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="fontStyle">italic</item>
+    </style>
+
+    <style name="TextInputLayoutCustom" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="hintTextColor">@color/gray3</item>
+        <item name="startIconTint">@color/gray3</item>
+        <item name="endIconTint">@color/gray3</item>
+        <item name="errorIconTint">@color/gray3</item>
+        <item name="boxStrokeColor">@color/transparent</item>
+        <item name="boxBackgroundColor">@color/gray2</item>
+        <item name="cursorColor">@color/white</item>
+    </style>
+
+    <style name="TextInputLayoutAppBar" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="hintTextColor">@color/gray3</item>
+        <item name="startIconTint">@color/white</item>
+        <item name="boxStrokeColor">@color/gray2</item>
+        <item name="boxBackgroundColor">@color/gray2</item>
+        <item name="cursorColor">@color/white</item>
+    </style>
+
+    <style name="TextEditStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">12sp</item>
+
+    </style>
+
+    <style name="TextEditStyleHome">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">12sp</item>
+        <item name="hintTextColor">@color/gray3</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColorHint">@color/gray3</item>
+        <item name="cursorColor">@color/white</item>
+    </style>
+
+
+    <style name="TextEditStyleCode">
+        <item name="android:background">@drawable/rounded_hint</item>
+        <item name="android:inputType">number</item>
+        <item name="android:paddingLeft">@dimen/_20dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/gray3</item>
+    </style>
+
+</resources>

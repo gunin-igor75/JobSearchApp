@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/miEye"
+        android:icon="@drawable/ic_eye"
+        android:title="@string/eye"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/miShared"
+        android:icon="@drawable/ic_shared"
+        android:title="@string/shared"
+        app:showAsAction="always"
+        />
+
+    <item
+        android:id="@+id/miFavorite"
+        android:icon="@drawable/ic_favorite_selected"
+        android:title="@string/favorite"
+        app:showAsAction="always"
+        />
+
+</menu>

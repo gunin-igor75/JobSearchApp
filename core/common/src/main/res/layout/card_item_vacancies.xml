@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_card"
+    android:padding="@dimen/dp_2x">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewViewingCountVacancies"
+        style="@style/sfProDisplayRegular.14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/green"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/card_vacancies_viewing_vacancies" />
+
+    <ImageView
+        android:id="@+id/imageViewFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/icon_favorite_selected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_favorite_selected" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewVacanciesTitle"
+        style="@style/sfProDisplayMedium.16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewFavorite"
+        tools:text="UI/UX Designer" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewVacanciesAddress"
+        style="@style/sfProDisplayMedium.16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewVacanciesTitle"
+        tools:text="Минск" />
+
+    <LinearLayout
+        android:id="@+id/llCompany"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_4dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewVacanciesAddress">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewVacanciesCompany"
+            style="@style/sfProDisplayMedium.16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Мобирикс" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_1x"
+            android:contentDescription="@string/icon_confirm"
+            android:src="@drawable/ic_confirm" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llExperience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llCompany">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/icon_experiences"
+            android:src="@drawable/ic_experiences" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewExperience"
+            style="@style/sfProDisplayRegular.14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_1x"
+            tools:text="@string/experiences" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/textViewPublicationDate"
+        style="@style/sfProDisplayRegular.14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:text="@string/publication_date"
+        android:textColor="@color/gray3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llExperience" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonRespond"
+        style="@style/sfProDisplayRegular.14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2x"
+        android:backgroundTint="@color/green"
+        android:text="@string/response"
+        android:textAllCaps="false"
+        app:cornerRadius="@dimen/_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPublicationDate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
